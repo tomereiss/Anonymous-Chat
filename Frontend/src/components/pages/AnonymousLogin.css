@@ -1,0 +1,190 @@
+.login-signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+}
+.hacker-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('C:\Users\97250\Desktop\synaps\חפיפה\AnonymousChat\Frontend\src\assets\login_background.jpeg'); /* Adjust path as necessary */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust opacity to make the image lighter */
+    z-index: -1; /* Ensures the image is behind any content */
+}
+.hacker-image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50%; /* Cover the top half of the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    }
+
+.form-container {
+    background: rgba(255, 255, 255,0.89); 
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 2;
+}
+
+.form-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Ensures padding and borders are included in width calculation */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container button {
+    width: 100%; /* Ensures full container width */
+    padding: 12px; /* Uniform padding */
+    margin-bottom: 15px; /* Bottom margin for spacing */
+    border: 1px solid #ccc; /* Consistent border for inputs */
+    border-radius: 4px; /* Rounded corners for aesthetic */
+    box-sizing: border-box; /* Critical: includes padding and border in the element's total width */
+    cursor: pointer; /* Cursor indicates clickable items */
+    font-size: 16px; /* Consistent font size */
+}
+
+/* Specific styles for buttons */
+.form-container button {
+    background-color: #230452; /* Deep blue background */
+    color: white; /* Text color */
+    border: none; /* No additional border */
+    margin-top: 10px; /* Margin top for spacing from last input */
+    padding: 12px; /* Matching padding with input fields */
+}
+.form-container button:hover {
+    background-color: #7ba0c7;
+}
+
+/* Additional tweaks might be needed if you find the layout is still off */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    border: 1px solid #ccc; /* Ensures visibility and consistency */
+}
+
+.form-container .generate-nickname-btn{
+    background-color: #e8f0fe; /* Light blue background */
+    color: #0056b3; /* Dark blue text color for contrast */
+    border: 1px solid #b0c4de; /* Soft blue border */
+    border-radius: 4px; /* Consistent rounding */
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px; /* Space from the previous element */
+    margin-bottom: 20px; /* Extra space before the next form element */
+    cursor: pointer; /* Indicates the button is clickable */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form-container .generate-nickname-btn:hover{
+    background-color: #d1e0f0; /* Slightly darker on hover for feedback */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover for a lifted effect */
+}
+.form-container p {
+    margin-top: 20px;
+    color: #007BFF; /* Light blue to indicate clickable */
+    cursor: pointer;
+}
+
+.error-message {
+    color: #D8000C; /* Bright red color for error text */
+    background-color: #FFD2D2; /* Light red/pink background for visibility */
+    margin: 10px 0; /* Add some margin for spacing */
+    padding: 10px; /* Add padding to make the text not touch the borders */
+    border: 1px solid #D8000C; /* Red border to emphasize the error */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+    font-size: 0.9rem; /* Smaller text size */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 8px rgba(216, 0, 12, 0.1); /* Subtle shadow to lift the element off the page */
+}
+
+
+.button-container {
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#nickname-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px; 
+
+}
+
+.button-container .nickname-button {
+    padding: 10px 20px;
+    background-color: #e8f0fe; 
+    color: #0056b3; 
+    border: 1px solid #b0c4de; 
+    border-radius: 4px; 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-container .nickname-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(207, 202, 202, 0.2);
+}
+
+.button-container .nickname-button.selected {
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(to right, #6a82fb, #fc5c7d);
+    border: none;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Light white overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to ensure it covers other content */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Optional: additional style to visually "disable" the form */
+.form-container.disabled {
+    opacity: 0.5; /* Lower opacity to give a disabled look */
+    pointer-events: none; /* Prevent interaction with the form */
+}

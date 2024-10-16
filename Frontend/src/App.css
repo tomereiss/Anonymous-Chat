@@ -1,0 +1,56 @@
+/* Reset CSS */
+/* Global styles and reset */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* WhatsApp uses Segoe UI */
+}
+body {
+  background: linear-gradient(to bottom, #f7f7f7 0%, #e1e1e1 100%); /* Light gray gradient */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d9d9d9 100%); /* Gradient gray background */
+}
+
+/* Top strip styling */
+.top-strip {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px; /* Height of the blue strip */
+  background-color: #6b70bb; /* Blue color */
+  z-index: 1;
+}
+
+.app-body {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  width: 90vw;
+  height: 90vh;
+  max-width: 1200px;
+  max-height: 800px;
+  align-items: stretch;
+  z-index: 2;
+  overflow: hidden; /* Prevents children from overflowing */
+}
+
+@media (max-width: 768px) {
+  .app-body {
+      flex-direction: column; /* Stack the sidebar and chat area vertically on small screens */
+  }
+}

@@ -1,0 +1,53 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); /* Darkened background */
+  z-index: 1050; /* Ensures it is above everything else */
+}
+
+.modal-content {
+  position: relative; /* Essential for absolute children like the close button */
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2; /* Ensure it's above the backdrop but under the modal itself */
+  width: 25%; /* Adjust size as needed */
+  min-width: 300px; /* Minimum width */
+}
+
+.close-button {
+  position: absolute;
+  top: 0 ;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+.close-button :hover {
+  color: #5e070b; 
+  transform: scale(1.2); 
+}
+
+/* You can adjust form styling here */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 8px;
+  margin-bottom: 10px;
+}

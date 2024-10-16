@@ -1,0 +1,67 @@
+/* Style for the navigation strip within the app-body */
+.nav-strip {
+    width: 100%; /* Take full width of the app body */
+    height: 40px; /* Adjust height as needed */
+    background-color: #f2f2f2; /* Light grey background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns children to the far left and far right */
+    /* justify-content: flex-end; */
+    padding-right: 20px; /* Padding on the right for spacing */
+    border-bottom: 1px solid #ddd; /* Optional: adds a subtle separator */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds subtle shadow for depth */
+  }
+
+/* Style for individual icons in the navigation strip */
+.right-icons .icon, .left-icons .icon {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px; /* Space between icons */
+    cursor: pointer; /* Indicates clickable items */
+    color: #333; /* Icon color */
+    font-size: 20px; /* Icon size */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for hover effect and transform */
+}
+.right-icons .icon:hover, .left-icons .icon:hover {
+    color: #5e070b; 
+    transform: scale(1.2); 
+  }
+.nav-icon .icon:last-child {
+    margin-right: 0; /* No margin on the right for the last icon */
+}
+
+
+/* Tooltip styling */
+.right-icons .icon::after, .left-icons .icon::after {
+  content: attr(data-title); /* Use the title from data attribute */
+  position: absolute;
+  bottom: 100%; /* Position it above the icon */
+  left: 50%; /* Center the tooltip */
+  transform: translateX(-50%); /* Align center */
+  white-space: nowrap; /* Keep the tooltip on a single line */
+  background-color: #333; /* Tooltip background color */
+  color: #fff; /* Tooltip text color */
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s; /* Smooth transition */
+}
+
+.right-icons .icon:hover::after, .left-icons .icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+  @media (max-width: 768px) {
+    .nav-strip {
+      justify-content: center; /* Center icons on smaller screens */
+      padding-right: 10px; /* Reduce padding on smaller screens */
+    }
+  
+    .icons-container img {
+      margin-left: 10px; /* Less space between icons on smaller screens */
+    }
+  }

@@ -1,0 +1,10 @@
+
+.content-area {
+    display: flex; /* Enables flex layout for children */
+    flex-direction: row; /* Lays out children horizontally */
+    flex: 1; /* Takes up all available space after TopNav */
+    width: 100%; /* Full width of the parent */
+    overflow: hidden; /* Prevents children from overflowing */
+    align-items: flex-start; /* Aligns children at the top */
+  }
+  
